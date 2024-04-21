@@ -306,7 +306,7 @@ export default class EditItemApp extends React.Component {
                   folderName: `items/${itemId}`,
                 }}
               />
-              <div style="display: none;">
+              <div>
                 <AdminRichEditor
                   labelComponent={<ExplainText bundle={CONTROLS_TEXTS_DICT[ITEM_CONTROLS.DESCRIPTION]}/>}
                   value={item.description}

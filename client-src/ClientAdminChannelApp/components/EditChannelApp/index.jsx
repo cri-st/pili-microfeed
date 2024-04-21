@@ -209,7 +209,7 @@ export default class EditChannelApp extends React.Component {
                 }}
               />
             </div>
-            <div style="display: none;">
+            <div>
               <AdminRichEditor
                 labelComponent={<ExplainText bundle={CONTROLS_TEXTS_DICT[CHANNEL_CONTROLS.DESCRIPTION]}/>}
                 value={channel.description}
