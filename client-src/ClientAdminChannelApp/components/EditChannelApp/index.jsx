@@ -13,6 +13,7 @@ import {LANGUAGE_CODES_LIST, ITUNES_CATEGORIES_DICT, NAV_ITEMS} from "../../../.
 import ExplainText from "../../../components/ExplainText";
 import {CHANNEL_CONTROLS, CONTROLS_TEXTS_DICT} from "./FormExplainTexts";
 import {preventCloseWhenChanged} from "../../../common/BrowserUtils";
+import { Editor } from '@tinymce/tinymce-react';
 
 const SUBMIT_STATUS__START = 1;
 
@@ -200,6 +201,16 @@ export default class EditChannelApp extends React.Component {
                 extra={{
                   publicBucketUrl,
                   folderName: `channels/${channel.id}`,
+                }}
+              />
+              <Editor
+                initialValue={channel.description}
+                init={{
+                  plugins: 'link image code',
+                  toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
+                }}
+                onChange={(value) => {
+                  this.onUpdateChannelMeta('description', value);
                 }}
               />
             </div>

@@ -27,6 +27,7 @@ import {
 } from "./FormExplainTexts";
 import {preventCloseWhenChanged} from "../../../common/BrowserUtils";
 import {getMediaFileFromUrl} from "../../../../common-src/MediaFileUtils";
+import { Editor } from '@tinymce/tinymce-react';
 
 const SUBMIT_STATUS__START = 1;
 
@@ -296,6 +297,16 @@ export default class EditItemApp extends React.Component {
                 extra={{
                   publicBucketUrl,
                   folderName: `items/${itemId}`,
+                }}
+              />
+              <Editor
+                initialValue={channel.description}
+                init={{
+                  plugins: 'link image code',
+                  toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
+                }}
+                onChange={(value) => {
+                  this.onUpdateChannelMeta('description', value);
                 }}
               />
             </div>
