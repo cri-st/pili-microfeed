@@ -193,7 +193,6 @@ export default class EditChannelApp extends React.Component {
             </div>
             <div className="mt-8 pt-8 border-t">
               <Editor
-                licenseKey='gpl'
                 apiKey='ngkuqq74ysgvlfrbip87z23lw29m9ejhytniaja6v16z7q77'
                 initialValue={channel.description}
                 init={{
