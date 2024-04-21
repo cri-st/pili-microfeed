@@ -193,7 +193,7 @@ export default class EditChannelApp extends React.Component {
             <div className="mt-8 pt-8 border-t">
               <AdminRichEditor
                 labelComponent={<ExplainText bundle={CONTROLS_TEXTS_DICT[CHANNEL_CONTROLS.DESCRIPTION]}/>}
-                value={channel.description.get()}
+                value={channel.description}
                 onChange={(value) => {
                   this.onUpdateChannelMeta('description', value);
                 }}
