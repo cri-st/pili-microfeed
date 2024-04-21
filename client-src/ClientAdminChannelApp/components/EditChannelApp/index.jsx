@@ -195,7 +195,7 @@ export default class EditChannelApp extends React.Component {
                 labelComponent={<ExplainText bundle={CONTROLS_TEXTS_DICT[CHANNEL_CONTROLS.DESCRIPTION]}/>}
                 value={channel.description}
                 onChange={(value) => {
-                  this.onUpdateChannelMeta('description', value);
+                  this.onUpdateChannelMeta('description', value.get());
                 }}
                 extra={{
                   publicBucketUrl,

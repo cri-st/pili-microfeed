@@ -292,7 +292,7 @@ export default class EditItemApp extends React.Component {
               <AdminRichEditor
                 labelComponent={<ExplainText bundle={CONTROLS_TEXTS_DICT[ITEM_CONTROLS.DESCRIPTION]}/>}
                 value={item.description}
-                onChange={(value) => this.onUpdateItemMeta({'description': value})}
+                onChange={(value) => this.onUpdateItemMeta({'description': value.get()})}
                 extra={{
                   publicBucketUrl,
                   folderName: `items/${itemId}`,
