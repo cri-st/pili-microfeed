@@ -1,10 +1,5 @@
 import React from "react";
-import BlotFormatter from "quill-blot-formatter";
 import { Editor } from '@tinymce/tinymce-react';
-
-Quill.register({
-  'modules/blotFormatter': BlotFormatter,
-});
 
 export default class RichEditorQuill extends React.Component {
   constructor(props) {
@@ -12,13 +7,11 @@ export default class RichEditorQuill extends React.Component {
     this.state = {
       isOpen: false,
       mediaType: 'image',
-      quillSelection: null,
     };
   }
 
   render() {
-    const {value, onChange, extra} = this.props;
-    const {isOpen, mediaType, quillSelection} = this.state;
+    const {value, onChange} = this.props;
     return <div>
       <Editor
       licenseKey="gpl"
