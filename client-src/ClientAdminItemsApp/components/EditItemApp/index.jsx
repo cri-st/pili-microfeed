@@ -306,6 +306,17 @@ export default class EditItemApp extends React.Component {
                   folderName: `items/${itemId}`,
                 }}
               />
+              <div style="display: none;">
+                <AdminRichEditor
+                  labelComponent={<ExplainText bundle={CONTROLS_TEXTS_DICT[ITEM_CONTROLS.DESCRIPTION]}/>}
+                  value={item.description}
+                  onChange={(value) => this.onUpdateItemMeta({'description': value})}
+                  extra={{
+                    publicBucketUrl,
+                    folderName: `items/${itemId}`,
+                  }}
+                />
+              </div>
             </div>
           </div>
           <div className="lh-page-card">

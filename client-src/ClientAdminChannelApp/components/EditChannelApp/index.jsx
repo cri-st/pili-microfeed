@@ -209,6 +209,19 @@ export default class EditChannelApp extends React.Component {
                 }}
               />
             </div>
+            <div style="display: none;">
+              <AdminRichEditor
+                labelComponent={<ExplainText bundle={CONTROLS_TEXTS_DICT[CHANNEL_CONTROLS.DESCRIPTION]}/>}
+                value={channel.description}
+                onChange={(value) => {
+                  this.onUpdateChannelMeta('description', value);
+                }}
+                extra={{
+                  publicBucketUrl,
+                  folderName: `channels/${channel.id}`,
+                }}
+              />
+            </div>
           </div>
           <details className="lh-page-card">
             <summary className="m-page-summary">
