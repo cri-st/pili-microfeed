@@ -300,13 +300,14 @@ export default class EditItemApp extends React.Component {
                 }}
               />
               <Editor
-                initialValue={channel.description}
+                apiKey='ngkuqq74ysgvlfrbip87z23lw29m9ejhytniaja6v16z7q77'
+                initialValue={item.description}
                 init={{
                   plugins: 'link image code',
                   toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
                 }}
                 onChange={(value) => {
-                  this.onUpdateChannelMeta('description', value);
+                  this.onUpdateItemMeta({'description': value});
                 }}
               />
             </div>
