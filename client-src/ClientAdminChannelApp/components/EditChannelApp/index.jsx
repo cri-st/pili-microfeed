@@ -192,18 +192,8 @@ export default class EditChannelApp extends React.Component {
               </div>
             </div>
             <div className="mt-8 pt-8 border-t">
-              <AdminRichEditor
-                labelComponent={<ExplainText bundle={CONTROLS_TEXTS_DICT[CHANNEL_CONTROLS.DESCRIPTION]}/>}
-                value={channel.description}
-                onChange={(value) => {
-                  this.onUpdateChannelMeta('description', value);
-                }}
-                extra={{
-                  publicBucketUrl,
-                  folderName: `channels/${channel.id}`,
-                }}
-              />
               <Editor
+                licenseKey='gpl'
                 apiKey='ngkuqq74ysgvlfrbip87z23lw29m9ejhytniaja6v16z7q77'
                 initialValue={channel.description}
                 init={{
