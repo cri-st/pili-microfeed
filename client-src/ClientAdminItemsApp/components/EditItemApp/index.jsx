@@ -27,7 +27,6 @@ import {
 } from "./FormExplainTexts";
 import {preventCloseWhenChanged} from "../../../common/BrowserUtils";
 import {getMediaFileFromUrl} from "../../../../common-src/MediaFileUtils";
-import { Editor } from '@tinymce/tinymce-react';
 
 const SUBMIT_STATUS__START = 1;
 
@@ -290,33 +289,15 @@ export default class EditItemApp extends React.Component {
               </div>
             </div>
             <div className="mt-8 pt-8 border-t">
-              <Editor
-                apiKey='ngkuqq74ysgvlfrbip87z23lw29m9ejhytniaja6v16z7q77'
-                initialValue={item.description}
-                init={{
-                  plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate mentions tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
-                  toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat | code',
-                }}
+              <AdminRichEditor
                 labelComponent={<ExplainText bundle={CONTROLS_TEXTS_DICT[ITEM_CONTROLS.DESCRIPTION]}/>}
-                onChange={(value) => {
-                  this.onUpdateItemMeta({'description': value});
-                }}
+                value={item.description}
+                onChange={(value) => this.onUpdateItemMeta({'description': value})}
                 extra={{
                   publicBucketUrl,
                   folderName: `items/${itemId}`,
                 }}
               />
-              <div>
-                <AdminRichEditor
-                  labelComponent={<ExplainText bundle={CONTROLS_TEXTS_DICT[ITEM_CONTROLS.DESCRIPTION]}/>}
-                  value={item.description}
-                  onChange={(value) => this.onUpdateItemMeta({'description': value})}
-                  extra={{
-                    publicBucketUrl,
-                    folderName: `items/${itemId}`,
-                  }}
-                />
-              </div>
             </div>
           </div>
           <div className="lh-page-card">

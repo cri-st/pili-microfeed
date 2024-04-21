@@ -13,7 +13,6 @@ import {LANGUAGE_CODES_LIST, ITUNES_CATEGORIES_DICT, NAV_ITEMS} from "../../../.
 import ExplainText from "../../../components/ExplainText";
 import {CHANNEL_CONTROLS, CONTROLS_TEXTS_DICT} from "./FormExplainTexts";
 import {preventCloseWhenChanged} from "../../../common/BrowserUtils";
-import { Editor } from '@tinymce/tinymce-react';
 
 const SUBMIT_STATUS__START = 1;
 
@@ -192,24 +191,6 @@ export default class EditChannelApp extends React.Component {
               </div>
             </div>
             <div className="mt-8 pt-8 border-t">
-              <Editor
-                apiKey='ngkuqq74ysgvlfrbip87z23lw29m9ejhytniaja6v16z7q77'
-                initialValue={channel.description}
-                init={{
-                  plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate mentions tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
-                  toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat | code',
-                }}
-                labelComponent={<ExplainText bundle={CONTROLS_TEXTS_DICT[CHANNEL_CONTROLS.DESCRIPTION]}/>}
-                extra={{
-                  publicBucketUrl,
-                  folderName: `channels/${channel.id}`,
-                }}
-                onChange={(value) => {
-                  this.onUpdateChannelMeta('description', value);
-                }}
-              />
-            </div>
-            <div>
               <AdminRichEditor
                 labelComponent={<ExplainText bundle={CONTROLS_TEXTS_DICT[CHANNEL_CONTROLS.DESCRIPTION]}/>}
                 value={channel.description}
