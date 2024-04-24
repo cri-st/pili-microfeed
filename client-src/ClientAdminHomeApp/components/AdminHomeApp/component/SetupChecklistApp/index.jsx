@@ -284,7 +284,7 @@ export default class SetupChecklistApp extends React.Component {
     const {settings} = feed;
     const webGlobalSettings = settings[SETTINGS_CATEGORIES.WEB_GLOBAL_SETTINGS] || {};
 
-    return (<div className="lh-page-card" style="display: none;">
+    return (<div className="lh-page-card">
       <div className="lh-page-title">
         Setup checklist
       </div>
