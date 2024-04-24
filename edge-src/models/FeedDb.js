@@ -165,7 +165,7 @@ export default class FeedDb {
       'itunes:type': 'episodic',
       'itunes:complete': false,
       'itunes:block': false,
-      'copyright': `©${(new Date()).getFullYear()}`,
+      'copyright': `${(new Date()).getFullYear()}`,
     };
 
     const batchStatements = [
