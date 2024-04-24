@@ -8,7 +8,7 @@ export default class AdminRichEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mode: 'html',
+      mode: 'rich',
 
       isOpenImage: false,
     };
